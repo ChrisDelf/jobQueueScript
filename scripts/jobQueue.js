@@ -11,8 +11,7 @@ const jobQueue = async () =>
         where: {status: "unfinished"}
     }
     )
-    console.log(job)
-    if (!job)
+        if (!job)
     {
         return
     }
@@ -21,14 +20,13 @@ const jobQueue = async () =>
         if (Array.isArray(job))
         {
             job.forEach(async (j) =>{
-            console.log("MANY JOBS HERE IS A JOB", j)
-            await downLoadSong(j)
+              await downLoadSong(j)
             })
 
         }
         else {
 
-        console.log("ONE JOBER EWREWR EW",job)
+        // console.log("ONE JOBER EWREWR EW",job)
         await downLoadSong(job)
         }
             

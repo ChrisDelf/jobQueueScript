@@ -12,6 +12,7 @@
     "node": "^19.8.1",
     "pg": "^8.10.0",
     "sequelize": "^6.31.0",
-    "short-uuid": "^4.2.2"
+    "short-uuid": "^4.2.2",
+    "socket.io-client": "^4.7.2"
   }
 }
