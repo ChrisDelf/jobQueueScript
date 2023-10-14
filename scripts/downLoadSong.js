@@ -8,7 +8,6 @@ const fsPromises = require("fs").promises;
 const path = require("path");
 const jsmediatags = require("jsmediatags");
 const io = require('socket.io-client');
-
 const Song = require("../models/Song");
 
 require("dotenv").config();
@@ -309,18 +308,6 @@ const downLoadSong = async (data) => {
     let response = "Link was a playlist";
     return response;
   }
-  // going to check if the song list was already downloaded using the same link
-  //   const newSong = await Song.findOne({
-  //     where: { link: link }
-  //   })
-
-  //   if (newSong !== null) {
-  //     let response = "Link has already been downloaded"
-  //     return response
-  //   }
-
-  // going to check if the folder already exist
-  // and if it doesn't then we create one
   let resArray = [];
   if (!fs.existsSync(path.join(songDirectory, "music"))) {
     await fsPromises.mkdir(path.join(songDirectory, "music"));
